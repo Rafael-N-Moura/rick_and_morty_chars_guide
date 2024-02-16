@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:rick_and_morty_guide/src/modules/home/presentation/page/widgets/filters_widet.dart';
 import '../../../../../app_provider.dart';
 import '../../controller/home_controller.dart';
-import '../../widgets/filters_widet.dart';
 
 import 'card_widget.dart';
 

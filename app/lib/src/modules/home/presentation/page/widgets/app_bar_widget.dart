@@ -67,6 +67,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
               borderRadius: BorderRadius.circular(10),
               shadowColor: Colors.black45,
               child: TextField(
+                key: const Key('searchTextField'),
                 onChanged: controller.setSearchText,
                 style: TextStyle(
                   fontFamily: RMGFonts.roboto,
@@ -95,12 +96,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
         actions: [
           Observer(builder: (context) {
             return IconButton(
+                key: const Key('themeModeButton'),
                 onPressed: () => _themeStore.toggleThemeMode(),
                 icon: _themeStore.themeMode == ThemeMode.light
-                    ? Icon(RMGIcons.dark,
-                        color: Theme.of(context).colorScheme.onBackground)
-                    : Icon(RMGIcons.darkFill,
-                        color: Theme.of(context).colorScheme.onBackground));
+                    ? const Icon(
+                        RMGIcons.dark,
+                        color: Colors.black,
+                      )
+                    : const Icon(
+                        RMGIcons.darkFill,
+                        color: Colors.white,
+                      ));
           })
         ],
       ),

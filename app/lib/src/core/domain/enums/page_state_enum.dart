@@ -16,4 +16,17 @@ extension EnumGenderExtension on EnumGender {
         return EnumGender.undefined;
     }
   }
+
+  String toFormattedString() {
+    switch (this) {
+      case EnumGender.male:
+        return 'Male';
+
+      case EnumGender.female:
+        return 'Female';
+
+      case EnumGender.undefined:
+        return 'Undefined';
+    }
+  }
 }

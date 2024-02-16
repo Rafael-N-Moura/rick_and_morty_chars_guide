@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
+import 'package:rick_and_morty_guide/src/modules/home/presentation/page/widgets/app_bar_widget.dart';
 import '../../../../app_provider.dart';
 import '../../../../core/theme/rmg_gradients.dart';
 import '../../../../core/utils/extensions/numbers_extension.dart';
 import '../../domain/enum/enum_state.dart';
-import '../widgets/app_bar_widget.dart';
-
 import '../../../../core/theme/store/theme_store.dart';
 import '../../../../core/widgets/error_modal.dart';
-import '../../home_provider.dart';
 import '../controller/home_controller.dart';
 import 'widgets/characters_widget.dart';
 import 'widgets/favorites_widget.dart';
@@ -27,7 +25,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    homeProvider();
     controller = getIt<HomeController>();
     controller.pipeline();
   }

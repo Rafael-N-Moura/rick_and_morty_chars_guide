@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:rick_and_morty_guide/src/core/domain/enums/page_state_enum.dart';
 
 import '../../../../app_provider.dart';
 import '../../../../core/domain/entities/character_entity.dart';
@@ -114,7 +114,8 @@ class _CharDetailPageState extends State<CharDetailPage> {
                 ),
                 lineDescription('Status', widget.char.status, theme),
                 lineDescription('Type', widget.char.type, theme),
-                lineDescription('Gender', widget.char.gender.toString(), theme),
+                lineDescription(
+                    'Gender', widget.char.gender.toFormattedString(), theme),
                 lineDescription('Origin', widget.char.origin, theme),
                 lineDescription('Location', widget.char.location, theme),
               ],

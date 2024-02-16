@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:rick_and_morty_guide/src/modules/home/presentation/page/widgets/chip_widget.dart';
 import '../../../../../app_provider.dart';
 import '../../../../../core/utils/extensions/numbers_extension.dart';
 import '../../controller/home_controller.dart';
-import '../../widgets/chip_widget.dart';
-
 
 class FiltersWidget extends StatelessWidget {
-  final bool purple ;
-  FiltersWidget({super.key, this.purple=false});
+  final bool purple;
+  FiltersWidget({super.key, this.purple = false});
 
   final controller = getIt<HomeController>();
 

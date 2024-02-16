@@ -12,11 +12,10 @@ import '../../../../../core/theme/store/theme_store.dart';
 import '../../../../../core/utils/extensions/numbers_extension.dart';
 import '../../controller/home_controller.dart';
 
-
 class CardWidget extends StatelessWidget {
   final Character char;
   CardWidget({
-    super.key,
+    super.key = const Key("characterCard"),
     required this.char,
   });
 
@@ -30,8 +29,7 @@ class CardWidget extends StatelessWidget {
     final theme = Theme.of(context);
 
     return InkWell(
-      onTap: () => Navigator.of(context)
-          .pushNamed('/detail', arguments: char),
+      onTap: () => Navigator.of(context).pushNamed('/detail', arguments: char),
       child: Container(
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 10.scale, horizontal: 30.scale),
@@ -113,8 +111,7 @@ class CardWidget extends StatelessWidget {
                                           SizedBox(
                                             width: 7.scale,
                                           ),
-                                          Text(
-                                              char.status,
+                                          Text(char.status,
                                               style: theme.textTheme.caption),
                                         ],
                                       ),
@@ -130,10 +127,7 @@ class CardWidget extends StatelessWidget {
                                           .copyWith(
                                               color: theme.colorScheme.onSurface
                                                   .withOpacity(0.15),
-                                              fontSize: char
-                                                          .type
-                                                          .length >
-                                                      10
+                                              fontSize: char.type.length > 10
                                                   ? 15.scale
                                                   : 25.scale),
                                     )),
@@ -142,9 +136,9 @@ class CardWidget extends StatelessWidget {
                                     right: -10,
                                     top: -10,
                                     child: IconButton(
+                                        key: const Key('heartFavoriteButton'),
                                         onPressed: () {
-                                          controller.handleTapFavorite(
-                                              char.id);
+                                          controller.handleTapFavorite(char.id);
                                         },
                                         icon: Icon(
                                           char.isFavorite
